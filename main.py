@@ -76,7 +76,7 @@ def main():
         st.error("Данные временно недоступны. Попробуйте позже.")
         return
 
-    st.write(f'**Current LABR price:** {latest_labr_price:.6f} USD')
+    st.write(f'**Текущая цена LABR:** {latest_labr_price:.6f} USD')
 
     tx_type_choice = st.selectbox('Выберите тип транзакции', ['Продажа', 'Покупка'])
 
@@ -97,7 +97,7 @@ def main():
 
         if st.button('Рассчитать цену после покупки'):
             new_labr_price = calculate_price_after_buying(wtrx_token_balance, labr_token_balance, amount_in_wtrx) * wtrx_price_in_usd
-            st.write(f'**Цена после покупки:** {new_labr_price:.6f} USD')
+            st.write(f'**Цена LABR после покупки:** {new_labr_price:.6f} USD')
             st.write(f'Изменение цены: {(new_labr_price - latest_labr_price):.6f} USD ({((new_labr_price - latest_labr_price) / latest_labr_price * 100):.1f}%)')
 
 if __name__ == '__main__':
