@@ -84,7 +84,7 @@ def main():
         labr_amount = st.number_input('Введите количество LABR:', min_value=1, step=1)
         if st.button('Рассчитать цену после продажи'):
             new_labr_price = calculate_price_after_selling(wtrx_token_balance, labr_token_balance, labr_amount) * wtrx_price_in_usd
-            st.write(f'**Цена после продажи:** {new_labr_price:.6f} USD')
+            st.write(f'**Цена LABR после продажи:** {new_labr_price:.6f} USD')
             st.write(f'Изменение цены: {(new_labr_price - latest_labr_price):.6f} USD ({((new_labr_price - latest_labr_price) / latest_labr_price * 100):.1f}%)')
 
     elif tx_type_choice == 'Покупка':
